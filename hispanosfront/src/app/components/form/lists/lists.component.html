@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" style="margin-top: 70px;" *ngFor="let l of registers">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"> {{l.fullName}} </h5>
+                <p class="card-text"> {{l.message}} </p>
+                <div class="row">
+                  <div class="col-6">
+                    <button class="btn btn-primary" (click)="editing(l)"> Edit </button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-danger" (click)="delete(l._id)"> Delete </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6" >
+          <app-create (send)="callApi($event)" [registerEdit]="registertodit"></app-create>
+        </div>
+    </div>
+
+    
+</div>
+

@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <form [formGroup]="register" (submit)="submit()" class="card mt-5 container">
+            <div class="card-header text-center">
+                <h3>New Form</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="text" formControlName="fullName" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                    <input type="text" formControlName="companyName" class="form-control">
+                </div>
+                
+
+                <div class="form-group">
+                    <input type="text" formControlName="email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" formControlName="phone" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryForm">Category</label>
+                    <select id="categoryForm" class="form-control" formControlName="category">
+                        <option  *ngFor="let c of category" [value]="c"> {{c}} </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" formControlName="message" rows="3"></textarea>
+                </div>
+        
+                <button class="btn btn-outline-success mx-auto">Save</button>
+            </div>
+        
+           
+        
+        </form>
+    </div>
+</div>
